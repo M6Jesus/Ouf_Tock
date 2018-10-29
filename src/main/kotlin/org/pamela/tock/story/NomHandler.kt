@@ -7,7 +7,7 @@ import fr.vsct.tock.bot.engine.BotBus
 
 val nomIntent = story("nom") {
 
-    logger.debug("prenom")
+    logger.debug("nom")
     resetDialogState()
  
 	

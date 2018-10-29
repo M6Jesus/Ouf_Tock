@@ -8,7 +8,7 @@ import fr.vsct.tock.bot.engine.BotBus
 val codeSecretThirdIntent = story(
         "codeSecretThird") {
 
-    logger.debug("prenom")
+    logger.debug("codeSecretThird")
     resetDialogState()
  
     var codeSecretThirdInt : Int?= codeSecretThird?.value?.toInt()

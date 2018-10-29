@@ -15,7 +15,7 @@ val codeSecretFirstIntent = story(
         "codeSecretFirst") {
 	
 
-    logger.debug("prenom")
+    logger.debug("codeSecretFirst")
     resetDialogState()
  
 	var codeSecretFirstInt : Int?= codeSecretFirst?.value?.toInt()
