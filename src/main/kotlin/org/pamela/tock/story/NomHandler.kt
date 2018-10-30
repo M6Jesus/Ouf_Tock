@@ -5,16 +5,16 @@ import fr.vsct.tock.bot.definition.story
 import fr.vsct.tock.nlp.entity.StringValue
 import fr.vsct.tock.bot.engine.BotBus
 
-val nom = story("nom") {
+val nomintent = story("nomintent") {
 
-    logger.debug("nom")
+    logger.debug("nomintent")
     resetDialogState()
  
 	
-	if(nomValue == null ){
+	if(nom == null ){
 		end("désolé merci de me donner votre nom pour une connexion sécurisé")
 	}else{
-		send("vous avez dit " + nomValue + " merci de me donner votre code secret svp vous avez 3 tentatives" )
+		send("vous avez dit " + nom + " merci de me donner votre code secret svp vous avez 3 tentatives" )
 		end()
 	}
 }

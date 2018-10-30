@@ -2,11 +2,11 @@ package org.pamela.tock
 
 import fr.vsct.tock.bot.definition.IntentDef
 import fr.vsct.tock.bot.definition.bot
-import org.pamela.tock.story.codeSecretFirst
-import org.pamela.tock.story.codeSecretSecond
-import org.pamela.tock.story.codeSecretThird
-import org.pamela.tock.story.nom
-import org.pamela.tock.story.prenom
+import org.pamela.tock.story.codesecretfirstintent
+import org.pamela.tock.story.codesecretsecondintent
+import org.pamela.tock.story.codesecretthirdintent
+import org.pamela.tock.story.nomintent
+import org.pamela.tock.story.prenomintent
 import org.pamela.tock.story.greetings
 import mu.KotlinLogging
 
@@ -18,11 +18,11 @@ val openBot = bot(
 		stories =
 		listOf(
 				greetings,
-				nom,
-				prenom,
-				codeSecretFirst,
-				codeSecretSecond,
-				codeSecretThird
+				nomintent,
+				prenomintent,
+				codesecretfirstintent,
+				codesecretsecondintent,
+				codesecretthirdintent
 		),
 		hello = greetings
 )
@@ -37,3 +37,5 @@ val codeSecretEntitySecond = openBot.entity("codeSecretSecond", "codeSecretSecon
 val codeSecretEntityThird = openBot.entity("codeSecretThird", "codeSecretThird")
 val nomVaccinEntity = openBot.entity("nomVaccin", "nomVaccin")
 val nomMedecinEntity = openBot.entity("nomMedecin", "nomMedecin")
+
+val codeSecret1 = openBot.entity("duckling:number", "number")
