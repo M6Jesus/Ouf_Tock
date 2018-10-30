@@ -15,32 +15,32 @@ import fr.vsct.tock.nlp.entity.StringValue
  * entity values
  */
 
-var BotBus.prenom: StringValue?
+var BotBus.prenomValue: StringValue?
 	get() = entityValue(prenomEntity)
 	set(value) = changeEntityValue(prenomEntity, value)
 
 
-var BotBus.nom: StringValue?
+var BotBus.nomValue: StringValue?
 	get() = entityValue(nomEntity)
 	set(value) = changeEntityValue(nomEntity, value)
 
 
-var BotBus.codeSecretFirst: NumberValue?
+var BotBus.codeSecretFirstValue: NumberValue?
 	get() = entityValue(codeSecretEntityFirst)
 	set(value) = changeEntityValue(codeSecretEntityFirst, value)
 
-var BotBus.codeSecretSecond: StringValue?
+var BotBus.codeSecretSecondValue: StringValue?
 	get() = entityValue(codeSecretEntitySecond)
 	set(value) = changeEntityValue(codeSecretEntitySecond, value)
 
-var BotBus.codeSecretThird: StringValue?
+var BotBus.codeSecretThirdValue: StringValue?
 	get() = entityValue(codeSecretEntityThird)
 	set(value) = changeEntityValue(codeSecretEntityThird, value)
 
-var BotBus.nomMedecin: StringValue?
+var BotBus.nomMedecinValue: StringValue?
 	get() = entityValue(nomMedecinEntity)
 	set(value) = changeEntityValue(nomMedecinEntity, value)
 
-var BotBus.nomVaccin: StringValue?
+var BotBus.nomVaccinValue: StringValue?
 	get() = entityValue(nomVaccinEntity)
 	set(value) = changeEntityValue(nomVaccinEntity, value)

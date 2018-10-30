@@ -2,12 +2,12 @@ package org.pamela.tock
 
 import fr.vsct.tock.bot.definition.IntentDef
 import fr.vsct.tock.bot.definition.bot
-import org.pamela.tock.story.codeSecretFirstIntent
-import org.pamela.tock.story.codeSecretSecondIntent
-import org.pamela.tock.story.codeSecretThirdIntent
-import org.pamela.tock.story.nomIntent
-import org.pamela.tock.story.prenomIntent
-import org.pamela.tock.story.welcome
+import org.pamela.tock.story.codeSecretFirst
+import org.pamela.tock.story.codeSecretSecond
+import org.pamela.tock.story.codeSecretThird
+import org.pamela.tock.story.nom
+import org.pamela.tock.story.prenom
+import org.pamela.tock.story.greetings
 import mu.KotlinLogging
 
 /**
@@ -17,14 +17,14 @@ val openBot = bot(
 		"tockgoogle",
 		stories =
 		listOf(
-				welcome,
-				nomIntent,
-				prenomIntent,
-				codeSecretFirstIntent,
-				codeSecretSecondIntent,
-				codeSecretThirdIntent
+				greetings,
+				nom,
+				prenom,
+				codeSecretFirst,
+				codeSecretSecond,
+				codeSecretThird
 		),
-		hello = welcome
+		hello = greetings
 )
 
 /**
