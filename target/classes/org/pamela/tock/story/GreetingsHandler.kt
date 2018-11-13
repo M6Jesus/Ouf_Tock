@@ -9,12 +9,16 @@ import fr.vsct.tock.bot.definition.story
 import fr.vsct.tock.bot.definition.SimpleStoryStep
 import fr.vsct.tock.bot.definition.*
 import org.pamela.tock.story.logger
+import fr.vsct.tock.bot.engine.dialog.NextUserActionState
 
 
-enum class GreetingsQuestionSteps : SimpleStoryStep { greetings, prenomintent, nomintent, codesecretfirstintent, codesecretsecondintent, codesecretthirdintent }
+enum class GreetingsQuestionSteps : SimpleStoryStep { greetings, prenomintent, nomintent, codesecretfirstintent,
+													codesecretsecondintent, codesecretthirdintent, tousmedecinsintent,
+													tousvaccinsintent, medecindisponibleintent,
+													medecinspecialiteintent}
 
-val greetings = storyWithSteps<GreetingsQuestionSteps>("greetings") {
-	logger.debug("greetings")
+val greetingss = storyWithSteps<GreetingsQuestionSteps>("greetingss") {
+	logger.debug("********************je suis dans greetingss**********************************")
 	//cleanup state
 	resetDialogState()
 
@@ -26,80 +30,51 @@ val greetings = storyWithSteps<GreetingsQuestionSteps>("greetings") {
 		)
 	}
 	end()
+	if (step == tousmedecinsintent) {
+		logger.debug("********************************************je passe au moins ici tousmedecinsintent *******************************")
+	}
+	else if (step == prenomintent) {
+		logger.debug("********************************************je passe au moins ici prenomintent *******************************")
 
-	if (step == prenomintent) {
-		logger.debug("je suis dans prenomintent = "+ prenom)
-		resetDialogState()
-
-
-		if (prenom == null) {
-			end("désolé merci de me donner votre prenom pour une connexion sécurisé")
-		} else {
-			send("vous avez dit " + prenom + " merci de me donner votre nom svp ")
-			end()
-		}
+		
+		
 	} else if (step == nomintent) {
-		logger.debug("je suis dans nom = "+ nom)
-		resetDialogState()
-
-
-		if (nom == null) {
-			end("désolé merci de me donner votre nom pour une connexion sécurisé")
-		} else {
-			send("vous avez dit " + nom + " merci de me donner votre code secret svp vous avez 3 tentatives")
-			end()
-		}
+		logger.debug("********************************************je passe au moins ici nomintent *******************************")
+		
 	} else if (step == codesecretfirstintent) {
-		logger.debug("je suis dans prenomValuecodeSecretFirst = " + codeSecretFirst)
-		resetDialogState()
-
-		var codeSecretFirstInt: Int? = codeSecretFirst?.value?.toInt()
-		if (codeSecretFirstInt == null) {
-			end("désolé merci de me donner votre code secret pour une connexion sécurisé")
-		} else {
-
-			when (codeSecretFirstInt) {
-				1234 -> send("vous avez dit " + codeSecretFirstInt + " la connexion viens d'etre établi avec l'application merci! ")
-				else -> send("vous avez dit " + codeSecretFirstInt + "ceci n'est malheureusement pas le bon code, il vous reste deux tentatives")
-			}
-
-			end()
-		}
+		logger.debug("********************************************je passe au moins ici codesecretfirstintent *******************************")
+		
 	} else if (step == codesecretsecondintent) {
+		logger.debug("********************************************je passe au moins ici codesecretsecondintent *******************************")
 
-		logger.debug("codeSecretSecond")
-		resetDialogState()
-
-		var codeSecretSecondInt: Int? = codeSecretSecond?.value?.toInt()
-		if (codeSecretSecondInt == null) {
-			end("désolé merci de me donner votre code secret pour une connexion sécurisé")
-		} else {
-			when (codeSecretSecondInt) {
-				1234 -> send("vous avez dit " + codeSecretSecondInt + " la connexion viens d'etre établi avec l'application merci! ")
-				else -> send("vous avez dit " + codeSecretSecondInt + "ceci n'est malheureusement pas le bon code, il vous reste une tentatives")
-			}
-
-			end()
-		}
+		
 	} else if (step == codesecretthirdintent) {
-		logger.debug("codeSecretThird")
-		resetDialogState()
-
-		var codeSecretThirdInt: Int? = codeSecretThird?.value?.toInt()
-		if (codeSecretThirdInt == null) {
-			end("désolé merci de me donner votre code secret pour une connexion sécurisé")
-		} else {
-			when (codeSecretThirdInt) {
-				1234 -> send("vous avez dit " + codeSecretThirdInt + " la connexion viens d'etre établi avec l'application merci! ")
-				else -> send("vous avez dit " + codeSecretThirdInt + "ceci n'est malheureusement pas le bon code, aurevoir")
-			}
-
-			end()
-		}
-	} else {
+		logger.debug("********************************************je passe au moins ici codesecretthirdintent *******************************")
+	
+	}else if (step == tousmedecinsintent) {
+		logger.debug("********************************************je passe au moins ici tousmedecinsintent *******************************")
+	
+	}else if (step == tousvaccinsintent) {
+		logger.debug("********************************************je passe au moins ici tousvaccinsintent *******************************")
+	} else if (step == medecindisponibleintent) {
+		logger.debug("********************************************je passe au moins ici medecindisponibleintent *******************************")
+	}else if (step == medecinspecialiteintent) {
+		logger.debug("********************************************je passe au moins ici medecinspecialiteintent *******************************")
+	}else {
 		send("je suis perdu lol!")
 	}
 }
+
+//val cancel = story("cancel"){
+//	logger.debug("je suis dans l'intent cancel")
+//	resetDialogState()
+//	withGoogleAssistant {
+//      gaMessage(
+//            "vous n'avez pas rentrer les bonnes informations voulez vous reprendre?"
+//       )	
+//	}
+//	end()
+//}
 /**
  * The greetings handler.
  */

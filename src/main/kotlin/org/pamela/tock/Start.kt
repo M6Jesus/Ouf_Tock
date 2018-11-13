@@ -19,7 +19,7 @@ object Start {
         //set default zone id, these are french trains, so...
         System.setProperty("tock_default_zone", "Europe/Paris")
         //enable i18n as two locales are supported
-        Translator.enabled = true
+        Translator.enabled = false
 
         //add evaluation for [PlaceValue] after nlp response
         BotRepository.registerNlpListener(TockGoogleNlpListener)
@@ -28,7 +28,7 @@ object Start {
         registerAndInstallBot(openBot)
 
         //load NLP model and i18n labels
-        importNlpDump("/tockgoogle.json")
-        //importI18nDump("/labels.json")
+        importNlpDump("/tockgoogle_app.json")
+        
     }
 }
