@@ -4,6 +4,7 @@ import fr.vsct.tock.bot.definition.StoryDefinition
 import fr.vsct.tock.bot.definition.story
 import fr.vsct.tock.bot.engine.dialog.NextUserActionState
 import org.pamela.tock.SecondaryIntent.cancel
+import fr.vsct.tock.bot.definition.*
 
 
 //val codesecretsecondintent = story(
@@ -61,3 +62,36 @@ val codesecretsecondintent: StoryDefinition by lazy {
 		}
 	}
 }
+
+
+//enum class dbConnectSteps : SimpleStoryStep {
+//
+//	firstnameRep,
+//
+//	lastnameRep,
+//
+//	passRep,
+//
+//}
+
+//val dbconnect = storyWithSteps<dbConnectSteps>(
+//		"dbConnect",
+//		emptySet(),
+//		setOf(SecondaryIntent.firstnameRep, SecondaryIntent.lastnameRep, SecondaryIntent.passRep)
+//) {
+//	if (step == null) {
+//		step = dbConnectSteps.firstnameRep
+//		end("Prénom ?")
+//	} else if (step == dbConnectSteps.firstnameRep && intent == SecondaryIntent.firstname) {
+//		step = dbConnectSteps.lastnameRep
+//		end("Nom ?")
+//	} else if (step == dbConnectSteps.lastnameRep && intent == SecondaryIntent.lastName) {
+//		step = dbConnectSteps.passRep
+//		end("Code ?")
+//	} else if (step == dbConnectSteps.passRep && intent == SecondaryIntent.pass) {
+//		step = dbConnectSteps.passRep
+//		end("Bravo tu es connecté !")
+//	} else {
+//		end("Au revoir")
+//	}
+//}

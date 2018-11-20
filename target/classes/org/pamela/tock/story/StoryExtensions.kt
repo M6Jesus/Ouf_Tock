@@ -20,12 +20,16 @@ import fr.vsct.tock.nlp.entity.StringValue
 
 var BotBus.prenom: String?
 	get() = entityText(prenomEntity)
-	set(a) { if(a ==null) removeEntityValue(prenomEntity) else changeEntityText(prenomEntity, a) }
+	set(a) {
+		if (a == null) removeEntityValue(prenomEntity) else changeEntityText(prenomEntity, a)
+	}
 
 
 var BotBus.nom: String?
 	get() = entityText(nomEntity)
-	set(a) { if(a ==null) removeEntityValue(nomEntity) else changeEntityText(nomEntity, a) }
+	set(a) {
+		if (a == null) removeEntityValue(nomEntity) else changeEntityText(nomEntity, a)
+	}
 
 var BotBus.codeSecretFirst: NumberValue?
 	get() = entityValue(codeSecretEntityFirst)
@@ -39,26 +43,51 @@ var BotBus.codeSecretThird: NumberValue?
 	get() = entityValue(codeSecretEntityThird)
 	set(value) = changeEntityValue(codeSecretEntityThird, value)
 
-var BotBus.nomMedecin : String?
+var BotBus.nomMedecin: String?
 	get() = entityText(nomMedecinEntity)
-	set(a) { if(a ==null) removeEntityValue(nomMedecinEntity) else changeEntityText(nomMedecinEntity, a) }
+	set(a) {
+		if (a == null) removeEntityValue(nomMedecinEntity) else changeEntityText(nomMedecinEntity, a)
+	}
 
-var BotBus.specialite : String?
+var BotBus.specialite: String?
 	get() = entityText(specialiteEntity)
-	set(a) { if(a ==null) removeEntityValue(specialiteEntity) else changeEntityText(specialiteEntity, a) }
+	set(a) {
+		if (a == null) removeEntityValue(specialiteEntity) else changeEntityText(specialiteEntity, a)
+	}
 
-var BotBus.hopital : String?
+var BotBus.hopital: String?
 	get() = entityText(hopitalEntity)
-	set(a) { if(a ==null) removeEntityValue(hopitalEntity) else changeEntityText(hopitalEntity, a) }
+	set(a) {
+		if (a == null) removeEntityValue(hopitalEntity) else changeEntityText(hopitalEntity, a)
+	}
 
-var BotBus.nomVaccin : String?
+var BotBus.nomVaccin: String?
 	get() = entityText(nomVaccinEntity)
-	set(a) { if(a ==null) removeEntityValue(nomVaccinEntity) else changeEntityText(nomVaccinEntity, a) }
+	set(a) {
+		if (a == null) removeEntityValue(nomVaccinEntity) else changeEntityText(nomVaccinEntity, a)
+	}
 
-var BotBus.pays : String?
+var BotBus.pays: String?
 	get() = entityText(nomPaysEntity)
-	set(a) { if(a ==null) removeEntityValue(nomPaysEntity) else changeEntityText(nomPaysEntity, a) }
+	set(a) {
+		if (a == null) removeEntityValue(nomPaysEntity) else changeEntityText(nomPaysEntity, a)
+	}
 
+var BotBus.contextValue1: Int?
+	get() = getBusContextValue("cs1")
+	set(value) = changeContextValue("cs1", value)
+
+
+
+var BotBus.contextValue2: Int?
+	get() = getBusContextValue("cs2")
+	set(value) = changeContextValue("cs2", value)
+
+
+
+var BotBus.contextValue3: Int?
+	get() = getBusContextValue("cs3")
+	set(value) = changeContextValue("cs3", value)
 
 //var BotBus.nomMedecin: String?
 //	get() = entityText(nomMedecinEntity)

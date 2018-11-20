@@ -18,7 +18,7 @@ import org.pamela.tock.story.nomparhopitalintent
 import org.pamela.tock.story.nompardisponibiliteintent
 import org.pamela.tock.story.vaccinobligatoireintent
 import org.pamela.tock.story.vaccinparpaysintent
-import org.pamela.tock.story.testintent
+import org.pamela.tock.story.askIdentity
 import mu.KotlinLogging
 
 /**
@@ -44,7 +44,7 @@ val openBot = bot(
 				nompardisponibiliteintent,
 				vaccinobligatoireintent,
 				vaccinparpaysintent,
-				testintent
+				askIdentity
 		),
 		hello = prenomintent
 )

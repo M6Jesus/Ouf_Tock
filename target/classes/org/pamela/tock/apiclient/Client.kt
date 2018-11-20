@@ -20,13 +20,15 @@ object Client {
 					30000,
 					logger
 			)
-					.baseUrl("https://f05e6008.ngrok.io/api/")
+					.baseUrl("https://fec8f9a3.ngrok.io/api/")
+					
+					
 					.addJacksonConverter(
 							mapper.copy().registerModule(
 									SimpleModule()
 
 							)
-					)
+					)					
 					.build()
 					.create()
 	
@@ -82,13 +84,13 @@ object Client {
 				?: erreurHandle
 	}
 	
-	fun nomParHopital(query: String): List<String> {
+	fun nomParHopital(query: String): List<String>? {
 		erreurHandle = listOf("désolé une erreur est survenu lors de l'accès au nom des médecins de cet hopital. Merci de réessayer plus tard")
 		return api
 				.nomParHopital(query)
 				.execute()
 				.body()
-				?: erreurHandle
+				//?: erreurHandle
 	}
 	
 	fun nomParDisponibilite(): List<String> {
